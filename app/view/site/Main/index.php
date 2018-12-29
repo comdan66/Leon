@@ -5,7 +5,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
 
-    <title>Maple</title>
+    <title>Leon 留言板</title>
     <style type="text/css">
       *, *:after, *:before {
         vertical-align: top;
