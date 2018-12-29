@@ -190,7 +190,8 @@
     <hr>
     <div class='flash <?php echo $flash['type'];?>'><?php echo $flash['msg'];?></div>
 
-    <div class='messages'><?php
+    <div class='messages'>
+<?php
     foreach (\M\Message::all(['order' => 'id DESC']) as $message) { ?>
       <div class="message">
         <span><?php echo $message->title;?></span>
@@ -199,7 +200,8 @@
         <a href="<?php echo Url::toRouter('MainDelete', $message);?>">x</a>
       </div>
 <?php
-    }?></div>
+    }?>
+    </div>
 
   </body>
 </html>
