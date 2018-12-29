@@ -98,6 +98,7 @@
         border-bottom: 1px solid rgba(180, 180, 180, 1);
         padding: 8px 0;
         color: rgba(111, 111, 111, 1);
+        word-break: break-all;
       }
       .messages .message time {
         font-size: 10px;
