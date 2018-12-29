@@ -191,16 +191,16 @@
     <div class='flash <?php echo $flash['type'];?>'><?php echo $flash['msg'];?></div>
 
     <div class='messages'>
-      <?php echo implode('', array_map(function($message) {
-        $return = '';
-        $return .= '<div class="message">';
-          $return .= '<span>' . $message->title . '</span>';
-          $return .= '<div>' . $message->content . '</div>';
-          $return .= '<time>' . $message->createAt->format('Y-m-d H:i:s') . '</time>';
-          $return .= '<a href="' . Url::toRouter('MainDelete', $message) . '">x</a>';
-        $return .= '</div>';
-        return $return;
-      }, \M\Message::all(['order' => 'id DESC'])));?>
+<?php
+    foreach (\M\Message::all(['order' => 'id DESC']) as $message) { ?>
+      <div class="message">
+        <span><?php echo $message->title;?></span>
+        <div><?php echo $message->content;?>'</div>
+        <time><?php echo $message->createAt->format('Y-m-d H:i:s');?></time>
+        <a href="<?php echo Url::toRouter('MainDelete', $message);?>">x</a>
+      </div>
+<?php
+    }?>
     </div>
 
   </body>
