@@ -134,7 +134,7 @@
     </style>
   </head>
   <body lang="zh-tw">
-    <h1>請留言</h1>
+    <h1>Leon 留言板</h1>
     <hr>
       <div class='flash <?php echo $flash['type'];?>'><?php echo $flash['msg'];?></div>
     
