@@ -195,7 +195,7 @@
     foreach (\M\Message::all(['order' => 'id DESC']) as $message) { ?>
       <div class="message">
         <span><?php echo $message->title;?></span>
-        <div><?php echo $message->content;?>'</div>
+        <div><?php echo $message->content;?></div>
         <time><?php echo $message->createAt->format('Y-m-d H:i:s');?></time>
         <a href="<?php echo Url::toRouter('MainDelete', $message);?>">x</a>
       </div>
