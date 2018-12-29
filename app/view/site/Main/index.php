@@ -199,6 +199,7 @@
         <time><?php echo $message->createAt->format('Y-m-d H:i:s');?></time>
         <a href="<?php echo Url::toRouter('MainDelete', $message);?>">x</a>
       </div>
+      
 <?php
     }?>
     </div>
