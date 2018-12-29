@@ -124,6 +124,16 @@
         color: rgba(175, 38, 38, 1.00);
 
         cursor: pointer;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+        opacity: 0.8;
+
+        -webkit-transition: opacity 0.3s;
+             -o-transition: opacity 0.3s;
+                transition: opacity 0.3s;
+      }
+      .messages .message a:hover {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=false);
+        opacity: 1;
       }
       .flash {
         display: block;
