@@ -172,12 +172,12 @@
     <form action='<?php echo Url::toRouter('MainSubmit');?>' method='post'>
       <label class='row'>
         <div>標題</div>
-        <input type='text' name='title' placeholder='請輸入標題，最多 190 個字' maxlength='190' autofocus/>
+        <input type='text' name='title' placeholder='請輸入標題，最多 190 個字' maxlength='190' autofocus required/>
       </label>
 
       <label class='row'>
         <div>內容</div>
-        <textarea name='content' placeholder='請輸入內容，最多 190 個字' maxlength='190'></textarea>
+        <textarea name='content' placeholder='請輸入內容，最多 190 個字' maxlength='190' required></textarea>
       </label>
 
       <div class='buttons'>
