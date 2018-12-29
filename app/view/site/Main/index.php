@@ -66,6 +66,7 @@
         margin-top: 16px;
       }
       .messages .message {
+        position: relative;
         display: block;
         width: 300px;
         padding: 8px 16px;
@@ -102,11 +103,32 @@
         font-size: 10px;
         text-align: right;
       }
+      .messages .message a {
+        text-decoration: none;
+
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 20px;
+        height: 20px;
+        line-height: 18px;
+        font-size: 14px;
+        text-align: center;
+
+        -webkit-border-radius: 3px;
+           -moz-border-radius: 3px;
+                border-radius: 3px;
+
+        border: 1px solid rgba(255, 0, 0, .3);
+        background-color: rgba(255, 0, 0, .3);
+        color: rgba(175, 38, 38, 1.00);
+
+        cursor: pointer;
+      }
       .flash {
         display: block;
         width: 300px;
         border: 1px solid rgba(255, 0, 0, .3);
-        margin-bottom: 8px;
         padding: 8px 8px;
         
         text-align: left;
@@ -136,7 +158,6 @@
   <body lang="zh-tw">
     <h1>Leon 留言板</h1>
     <hr>
-      <div class='flash <?php echo $flash['type'];?>'><?php echo $flash['msg'];?></div>
     
     <form action='<?php echo Url::toRouter('MainSubmit');?>' method='post'>
       <label class='row'>
@@ -155,6 +176,7 @@
       </div>
     </form>
     <hr>
+    <div class='flash <?php echo $flash['type'];?>'><?php echo $flash['msg'];?></div>
 
     <div class='messages'>
       <?php echo implode('', array_map(function($message) {
@@ -163,6 +185,7 @@
           $return .= '<span>' . $message->title . '</span>';
           $return .= '<div>' . $message->content . '</div>';
           $return .= '<time>' . $message->createAt->format('Y-m-d H:i:s') . '</time>';
+          $return .= '<a href="' . Url::toRouter('MainDelete', $message) . '">x</a>';
         $return .= '</div>';
         return $return;
       }, \M\Message::all(['order' => 'id DESC'])));?>

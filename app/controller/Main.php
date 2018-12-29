@@ -6,6 +6,18 @@ class Main extends Controller {
     Load::sysLib('Validator.php');
   }
 
+  public function delete() {
+    wtfTo('MainIndex');
+    
+    transaction(function() {
+      $obj = \M\Message::one('id = ?', Router::params('id'));
+      $obj || error('找不到資料');
+      return $obj->delete();
+    });
+
+    Url::refreshWithSuccessFlash(Url::toRouter('MainIndex'), '刪除成功！');
+  }
+
   public function submit() {
     wtfTo('MainIndex');
 
