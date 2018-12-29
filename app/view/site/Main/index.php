@@ -91,6 +91,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        padding-right: 5px;
       }
       .messages .message div {
         font-size: 14px;
